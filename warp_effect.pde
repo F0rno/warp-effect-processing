@@ -1,5 +1,7 @@
 int numStars = 5000;
 Star[] stars = new Star[numStars];
+int starsSpeed = 16;
+float starsBrightness = random(150, 255); 
 
 void setup() {
   fullScreen();
@@ -26,8 +28,8 @@ class Star {
     y = random(-height, height);
     z = random(width);
     pz = z;
-    speed = 16; // Vary star speed
-    brightness = random(150, 255); // Vary star brightness
+    speed = starsSpeed;
+    brightness = starsBrightness;
   }
 
   void update() {
@@ -37,7 +39,7 @@ class Star {
       x = random(-width, width);
       y = random(-height, height);
       pz = z;
-      speed = random(5, 20); // Reset star speed on respawn
+      //speed = random(5, 20); // Reset star speed on respawn
       brightness = random(150, 255); // Reset brightness on respawn
     }
   }
@@ -45,7 +47,6 @@ class Star {
   void show() {
     float sx = map(x / z, 0, 1, 0, width);
     float sy = map(y / z, 0, 1, 0, height);
-    float r = map(z, 0, width, 8, 0); // Smaller stars farther away
     float px = map(x / pz, 0, 1, 0, width);
     float py = map(y / pz, 0, 1, 0, height);
 
