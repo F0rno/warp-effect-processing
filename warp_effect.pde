@@ -1,3 +1,8 @@
+// #######################################################
+// Title: Warp effect
+// Author: F0rno
+// #######################################################
+
 int numStars = 5000;
 Star[] stars = new Star[numStars];
 int starsSpeed = 16;
